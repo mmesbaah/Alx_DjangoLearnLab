@@ -45,3 +45,19 @@ class UserProfile(models.Model):
 
     def _str_(self):
         return f"{self.user.username} - {self.role}"
+    from django.db import models
+
+class Book(models.Model):
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    published_date = models.DateField()
+
+    class Meta:
+        permissions = [
+            ("can_add_book", "Can add a new book"),
+            ("can_change_book", "Can edit a book"),
+            ("can_delete_book", "Can delete a book"),
+        ]
+
+    def _str_(self):
+        return self.title
