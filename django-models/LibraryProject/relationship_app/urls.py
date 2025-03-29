@@ -14,6 +14,7 @@ urlpatterns = [
 ]
 from django.urls import path
 from .views import login_view, logout_view, register_view
+"views.register", "LogoutView.as_view(template_name=", "LoginView.as_view(template_name="
 
 urlpatterns = [
     path("login/", login_view, name="login"),
