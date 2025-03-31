@@ -218,3 +218,4 @@ class PostByTagListView(ListView):
         context = super().get_context_data(**kwargs)
         context['tag'] = self.kwargs.get('tag')
         return context
+        tags__name__icontains
